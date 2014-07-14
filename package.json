@@ -1,6 +1,6 @@
 {
   "name": "git-blame",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shelling out to git blame in a streaming Node fashion.",
   "main": "index.js",
   "dependencies": {
