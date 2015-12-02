@@ -1,8 +1,9 @@
-"use strict";
+/* eslint-disable no-console, func-names */
+'use strict';
 
+require('should');
 var proxyquire = require('proxyquire');
 var fs = require('fs');
-var should = require('should');
 var streamingParser = require('../lib/parser');
 
 describe('git-blame', function() {
@@ -35,7 +36,7 @@ describe('git-blame', function() {
       },
       'git-spawned-stream': function(path, args) {
         path.should.eql(repoPath);
-        args.should.eql(["blame", opts.rev, "-p", "--", opts.file]);
+        args.should.eql(['blame', opts.rev, '-p', '--', opts.file]);
 
         return 'git-spawned-stream';
       }

@@ -9,12 +9,16 @@
     "split-transform-stream": "~1.0.0"
   },
   "devDependencies": {
+    "alessioalex-standard": "^1.1.0",
+    "husky": "^0.10.2",
+    "mocha": "~2.3.4",
     "proxyquire": "~1.7.3",
-    "should": "~7.1.1",
-    "mocha": "~2.3.4"
+    "should": "~7.1.1"
   },
   "scripts": {
-    "test": "mocha"
+    "lint": "alessioalex-standard",
+    "test": "mocha",
+    "precommit": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",

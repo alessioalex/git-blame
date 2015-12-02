@@ -2,6 +2,8 @@
 
 Shelling out to [git blame](http://git-scm.com/docs/git-blame) in a streaming Node fashion.
 
+[![build status](https://secure.travis-ci.org/alessioalex/git-blame.png)](http://travis-ci.org/alessioalex/git-blame)
+
 ## Usage
 
 ```js
@@ -172,4 +174,6 @@ That's all, folks!
 npm test
 ```
 
-## License MIT
+## License
+
+[MIT](http://alessioalex.mit-license.org/)

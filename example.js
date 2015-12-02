@@ -1,4 +1,5 @@
-"use strict";
+/* eslint-disable no-console, func-names */
+'use strict';
 
 var gitBlame = require('./');
 var path = require('path');
