@@ -5,13 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "git-spawned-stream": "~0.1.0",
-    "debug": "~0.8.1",
-    "split-transform-stream": "~0.1.1"
+    "debug": "~2.2.0",
+    "split-transform-stream": "~1.0.0"
   },
   "devDependencies": {
-    "proxyquire": "~1.0.0",
-    "should": "~3.3.2",
-    "mocha": "~1.19.0"
+    "proxyquire": "~1.7.3",
+    "should": "~7.1.1",
+    "mocha": "~2.3.4"
   },
   "scripts": {
     "test": "mocha"

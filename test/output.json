@@ -163,18 +163,18 @@
         "timestamp": 1327735463,
         "tz": "-0800"
     },
-      "committer": {
-        "mail": "brooke.riggio@gmail.com",
-        "name": "Brook Riggio",
-        "timestamp": 1327735463,
-        "tz": "-0800"
-      },
+    "committer": {
+      "mail": "brooke.riggio@gmail.com",
+      "name": "Brook Riggio",
+      "timestamp": 1327735463,
+      "tz": "-0800"
+    },
+    "filename": "install.rb",
+    "hash": "856f13ab053f6b5dfa58d6e6c726d43cc5e73d00",
+    "previous": {
       "filename": "install.rb",
-      "hash": "856f13ab053f6b5dfa58d6e6c726d43cc5e73d00",
-      "previous": {
-        "filename": "install.rb",
-        "hash": "69aeecd358c285ef3c7b4431baf65be94c5c17c2"
-      },
-      "summary": "Whitespace only: Use single newline at end of file."
+      "hash": "69aeecd358c285ef3c7b4431baf65be94c5c17c2"
+    },
+    "summary": "Whitespace only: Use single newline at end of file."
   }]
 }
