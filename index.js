@@ -7,7 +7,7 @@ function blame(repoPath, opts) {
   var args = ['blame', (opts.rev || 'HEAD'), '-p', '--', opts.file];
 
   if(opts.ignoreWhitespaces) {
-    arr.splice(3, 0, '-w');
+    args.splice(3, 0, '-w');
   }
 
   // TODO: implement limit
