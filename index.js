@@ -4,11 +4,26 @@ var gitSpawnedStream = require('git-spawned-stream');
 var streamingParser = require('./lib/parser');
 
 function blame(repoPath, opts) {
-  var args = ['blame', (opts.rev || 'HEAD'), '-p', '--', opts.file];
+  var rev = typeof opts.rev !== 'undefined' ? opts.rev : 'HEAD';
+  var args = [];
 
-  if(opts.ignoreWhitespaces) {
-    args.splice(3, 0, '-w');
+  if (typeof opts.workTree === 'string') {
+    args.push('--work-tree=' + opts.workTree);
   }
+
+  args.push('blame');
+
+  if (rev) {
+    args.push(rev);
+  }
+
+  if (opts.ignoreWhitespaces) {
+    args.push('-w');
+  }
+
+  args.push('-p');
+  args.push('--');
+  args.push(opts.file);
 
   // TODO: implement limit
   return streamingParser(gitSpawnedStream(repoPath, args));
