@@ -174,6 +174,10 @@ That's all, folks!
 npm test
 ```
 
+## Used by
+
+- [Git Blame VSCode plugin](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)
+
 ## License
 
 [MIT](http://alessioalex.mit-license.org/)
