@@ -168,6 +168,39 @@ line { hash: '856f13ab053f6b5dfa58d6e6c726d43cc5e73d00',
 That's all, folks!
 ```
 
+## Options
+
+The options should be an `object`.
+
+### `rev` (`Boolean` or `String`)
+`<rev>` from `git blame`. If empty it will default to `HEAD`. If `false` and `workTree` is set it will use the work tree.
+
+### `workTree` (`String`)
+`--work-tree` from `git`. If empty no work tree will be used. Use full path.
+
+### `ignoreWhitespace` (`Boolean`)
+`-w` from `git blame`.
+
+### `limitLines` (`String`)
+`-L` from `git blame`.
+
+### `detectMoved` (`Boolean` or `Number`)
+`-M` from `git blame`. Requiered for `detectCopy`.
+
+### `detectCopy` (`Boolean` or `Number`)
+`-C` from `git blame`.
+
+### `detectCopyMode` (`String`)
+Possible options:
+* `any` - Look in all files and at all times
+* `created` - Look in files changed in the commit creating the file
+* `default` - Look in the same commit
+
+If left empty it will default to `default`.
+
+### `file` (`String`)
+`<file>` in `git blame`.
+
 ## Tests
 
 ```
