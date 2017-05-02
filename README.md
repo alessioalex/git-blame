@@ -201,6 +201,11 @@ If left empty it will default to `default`.
 ### `file` (`String`)
 `<file>` in `git blame`.
 
+## gitCommand
+
+This is an optional 3rd parameter besides the repo path and options.
+It's the path to the git binary to use (use the one in `PATH` by default).
+
 ## Tests
 
 ```

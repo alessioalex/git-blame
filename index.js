@@ -3,7 +3,7 @@
 var gitSpawnedStream = require('git-spawned-stream');
 var streamingParser = require('./lib/parser');
 
-function blame(repoPath, opts) {
+function blame(repoPath, opts, gitCommand = 'git') {
   var rev = typeof opts.rev !== 'undefined' ? opts.rev : 'HEAD';
   var args = [];
 
@@ -61,7 +61,7 @@ function blame(repoPath, opts) {
   args.push(opts.file);
 
   // TODO: implement limit
-  return streamingParser(gitSpawnedStream(repoPath, args));
+  return streamingParser(gitSpawnedStream(repoPath, args, gitCommand));
 }
 
 module.exports = blame;

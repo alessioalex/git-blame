@@ -4,19 +4,17 @@
   "description": "Shelling out to git blame in a streaming Node fashion.",
   "main": "index.js",
   "dependencies": {
-    "git-spawned-stream": "~0.1.0",
+    "git-spawned-stream": "1.0.0",
     "debug": "~2.2.0",
     "split-transform-stream": "~1.0.0"
   },
   "devDependencies": {
-    "alessioalex-standard": "^1.1.0",
     "husky": "^0.10.2",
     "mocha": "~2.3.4",
     "proxyquire": "~1.7.3",
     "should": "~7.1.1"
   },
   "scripts": {
-    "lint": "alessioalex-standard",
     "test": "mocha",
     "precommit": "npm run lint && npm test"
   },
