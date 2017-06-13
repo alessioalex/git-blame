@@ -4,19 +4,26 @@
   "description": "Shelling out to git blame in a streaming Node fashion.",
   "main": "index.js",
   "dependencies": {
+    "debug": "^2.6.8",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
     "git-spawned-stream": "1.0.0",
-    "debug": "~2.2.0",
     "split-transform-stream": "~1.0.0"
   },
   "devDependencies": {
-    "husky": "^0.10.2",
-    "mocha": "~2.3.4",
-    "proxyquire": "~1.7.3",
-    "should": "~7.1.1"
+    "eslint": "^4.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.13.4",
+    "mocha": "^3.4.2",
+    "proxyquire": "^1.8.0",
+    "should": "^11.2.1"
   },
   "scripts": {
+    "pretest": "eslint *.js test",
     "test": "mocha",
-    "precommit": "npm run lint && npm test"
+    "precommit": "npm test"
   },
   "repository": {
     "type": "git",

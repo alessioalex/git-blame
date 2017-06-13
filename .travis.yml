@@ -1,7 +1,8 @@
+sudo: false
 language: node_js
 node_js:
-  - 'stable'
-sudo: false
-cache:
-  directories:
-    - node_modules
+  - "stable"
+  - "6"
+  - "4"
+before_install:
+ - npm i npm@latest -g
