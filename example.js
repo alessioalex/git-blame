@@ -6,10 +6,10 @@ var path = require('path');
 
 var repoPath = path.resolve(process.env.REPO || (__dirname + '/.git'));
 var file = process.env.FILE || 'package.json';
-var rev = process.env.REV || 'HEAD';
+var rev = process.env.REV;
 
-gitBlame(repoPath, {
-  file: file,
+gitBlame(file, {
+  repoPath: repoPath,
   rev: rev
 }).on('data', function(type, data) {
   // type can be 'line' or 'commit'
