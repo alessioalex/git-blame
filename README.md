@@ -7,7 +7,7 @@ Shelling out to [git blame](http://git-scm.com/docs/git-blame) in a streaming No
 ## Usage
 
 ```js
-gitBlame(repoPath, options)
+gitBlame(file, options)
 ```
 
 Example:
@@ -20,8 +20,8 @@ var repoPath = path.resolve(process.env.REPO || (__dirname + '/.git'));
 var file = process.env.FILE || 'package.json';
 var rev = process.env.REV || 'HEAD';
 
-gitBlame(repoPath, {
-  file: file,
+gitBlame(file, {
+  repoPath: repoPath,
   rev: rev
 }).on('data', function(type, data) {
   // type can be 'line' or 'commit'
@@ -168,43 +168,58 @@ line { hash: '856f13ab053f6b5dfa58d6e6c726d43cc5e73d00',
 That's all, folks!
 ```
 
+## Parameters:
+
+- `file`    - `String` - `<file>` in `git blame`
+- `options` - `Object` - optional options
+
 ## Options
 
-The options should be an `object`.
+The options should be an `object` extend from [git-spawned-stream](https://github.com/gucong3000/git-spawned-stream/tree/options.input#options)
 
-### `rev` (`Boolean` or `String`)
+### `rev` `{String}`
+
 `<rev>` from `git blame`. If empty it will default to `HEAD`. If `false` and `workTree` is set it will use the work tree.
 
-### `workTree` (`String`)
-`--work-tree` from `git`. If empty no work tree will be used. Use full path.
+### `ignoreWhitespace` `{boolean}`
 
-### `ignoreWhitespace` (`Boolean`)
+Default: `true`
+
 `-w` from `git blame`.
 
-### `limitLines` (`String`)
+### `limitLines` `{String}`
+
 `-L` from `git blame`.
 
-### `detectMoved` (`Boolean` or `Number`)
+### `contents` `{String}`
+
+`--contents <file>` from `git blame`
+
+### `input` `{String|Buffer|Stream.Readable}`
+
+`--contents -` from `git blame`
+
+### `detectMoved` `{boolean|number}`
+
+Default: `true`
+
 `-M` from `git blame`. Requiered for `detectCopy`.
 
-### `detectCopy` (`Boolean` or `Number`)
+### `detectCopy` `{boolean|number}`
+
+Default: `true`
+
 `-C` from `git blame`.
 
-### `detectCopyMode` (`String`)
+### `detectCopyMode` `{String}`
+
 Possible options:
-* `any` - Look in all files and at all times
-* `created` - Look in files changed in the commit creating the file
-* `default` - Look in the same commit
+
+- `any` - Look in all files and at all times
+- `created` - Look in files changed in the commit creating the file
+- `default` - Look in the same commit
 
 If left empty it will default to `default`.
-
-### `file` (`String`)
-`<file>` in `git blame`.
-
-## gitCommand
-
-This is an optional 3rd parameter besides the repo path and options.
-It's the path to the git binary to use (use the one in `PATH` by default).
 
 ## Tests
 

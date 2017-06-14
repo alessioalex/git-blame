@@ -26,7 +26,12 @@ describe('git-blame', function() {
 
   it('should delegate with the correct params', function(done) {
     var repoPath = '/home/node.git';
-    var opts = { rev: 'master', file: 'CHANGES.md' };
+    var opts = {
+      ignoreWhitespaces: false,
+      detectMoved: false,
+      detectCopy: false,
+      repoPath: repoPath,
+    };
 
     var gitBlame = proxyquire.load('../', {
       './lib/parser': function(inputStream) {
@@ -34,15 +39,15 @@ describe('git-blame', function() {
 
         return 'streamingParser';
       },
-      'git-spawned-stream': function(path, args) {
-        path.should.eql(repoPath);
-        args.should.eql(['blame', opts.rev, '-p', '--', opts.file]);
+      'git-spawned-stream': function(args, configs) {
+        configs.repoPath.should.eql(repoPath);
+        args.should.eql(['blame', '-p', '--', 'CHANGES.md']);
 
         return 'git-spawned-stream';
       }
     });
 
-    gitBlame(repoPath, opts).should.eql('streamingParser');
+    gitBlame('CHANGES.md', opts).should.eql('streamingParser');
 
     done();
   });

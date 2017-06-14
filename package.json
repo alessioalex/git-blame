@@ -4,8 +4,8 @@
   "description": "Shelling out to git blame in a streaming Node fashion.",
   "main": "index.js",
   "dependencies": {
-    "git-spawned-stream": "1.0.0",
     "debug": "~2.2.0",
+    "git-spawned-stream": "github:gucong3000/git-spawned-stream#options.input",
     "split-transform-stream": "~1.0.0"
   },
   "devDependencies": {
