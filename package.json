@@ -9,14 +9,16 @@
     "split-transform-stream": "~1.0.0"
   },
   "devDependencies": {
-    "husky": "^0.10.2",
+    "eslint": "^4.4.1",
+    "husky": "^0.14.3",
     "mocha": "~2.3.4",
     "proxyquire": "~1.7.3",
     "should": "~7.1.1"
   },
   "scripts": {
+    "pretest": "eslint .",
     "test": "mocha",
-    "precommit": "npm run lint && npm test"
+    "precommit": "npm test"
   },
   "repository": {
     "type": "git",
